@@ -20,7 +20,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
     <form action={dispatch}>
       <div
         className="rounded-md bg-gray-50 p-4 md:p-6"
-        aria-describedby="errors"
+        aria-describedby="create-errors"
       >
         {/* Customer Name */}
         <div className="mb-4">
@@ -147,7 +147,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
         </fieldset>
         {state.errors ? (
           <div
-            id="errors"
+            id="create-errors"
             aria-live="polite"
             className="mt-2 text-sm text-red-500"
           >
