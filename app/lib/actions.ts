@@ -107,7 +107,6 @@ export async function updateInvoice(
 }
 
 export async function deleteInvoice(id: string) {
-  // throw new Error("Failed to Delete Invoice");
   try {
     await sql`DELETE FROM invoices WHERE id = ${id}`;
     revalidatePath("/dashboard/invoices");
@@ -123,6 +122,7 @@ export async function authenticate(
 ) {
   try {
     await signIn("credentials", Object.fromEntries(formData));
+    // TODO: error del login estara aca?
   } catch (error) {
     if ((error as Error).message.includes("CredentialsSignin")) {
       return "CredentialsSignin";
